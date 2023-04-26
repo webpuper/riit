@@ -12,8 +12,8 @@ Ext.define('appUsers.view.main.Main', {
     requires: [
         'Ext.MessageBox',
 
-        'appUsers.view.main.MainController',
-        'appUsers.view.main.MainModel',
+        'appUsers.controller.MainController',
+        'appUsers.model.MainModel',
         'appUsers.view.main.List'
     ],
 

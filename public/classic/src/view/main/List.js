@@ -8,13 +8,20 @@ Ext.define('appUsers.view.main.List', {
     requires: [
         'appUsers.store.Personnel'
     ],
+
+    columnLines: true,
+    height: screen.height - 200,
+    width: '100%',
+
+    frame: true,
+
     viewModel: 'main',
 
     title: 'Пользователи',
 
     store: {
         type: 'personnel'
-    },
+    },    
 
     columns: [
         { bind: { text: '{gridNameUser}' }, dataIndex: 'name', flex: 2 },
@@ -24,10 +31,9 @@ Ext.define('appUsers.view.main.List', {
             widget: {
                 xtype: 'combo',
                 editable: false,
-                store: [
-                    'Local',
-                    'Remote'
-                ]
+                store: {
+                    type: 'personnel'
+                }
             },
             dataIndex: 'education',
             flex: 1
@@ -37,5 +43,6 @@ Ext.define('appUsers.view.main.List', {
 
     listeners: {
         //   select: 'onItemSelected'
+
     }
 });

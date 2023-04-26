@@ -13,8 +13,8 @@ Ext.define('appUsers.view.main.Main', {
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
 
-        'appUsers.view.main.MainController',
-        'appUsers.view.main.MainModel',
+        'appUsers.controller.MainController',
+        'appUsers.model.MainModel',
         'appUsers.view.main.List'
     ],
 
@@ -77,7 +77,6 @@ Ext.define('appUsers.view.main.Main', {
     items: [{
         title: 'Тест для РИИТ',
         iconCls: 'x-fa fa-home',
-        // The following grid shares a store with the classic version's grid as well!
         items: [{
             xtype: 'mainlist'
         }]

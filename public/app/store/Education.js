@@ -1,10 +1,10 @@
-Ext.define('appUsers.store.Personnel', {
+Ext.define('appUsers.store.Education', {
     extend: 'Ext.data.Store',
 
-    alias: 'store.personnel',
+    alias: 'store.education',
 
     fields: [
-        'id', 'name', 'education', 'city'
+        'id', 'education'
     ],
 
     proxy: {
@@ -13,10 +13,10 @@ Ext.define('appUsers.store.Personnel', {
         actionMethods: {
            read: 'GET'
            },
-       url: '/api/users',
+       url: '/api/education',
         reader: {
             type: 'json',
-            rootProperty: 'data'
+           // rootProperty: 'data'
         }
 
     },

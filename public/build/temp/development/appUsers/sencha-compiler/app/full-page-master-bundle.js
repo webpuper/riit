@@ -1,2 +1,2 @@
 // @tag full-page
-// @require D:\work3\appUsers\app.js
+// @require c:\OSPanel\domains\localhost\public\app.js
