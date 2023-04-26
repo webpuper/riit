@@ -16,12 +16,25 @@ Ext.define('appUsers.view.main.List', {
     },
 
     columns: [
-        { text: 'Пользователь',  dataIndex: 'name' },
-        { text: 'Образование', dataIndex: 'education', flex: 1 },
+        { text: 'Пользователь', dataIndex: 'name', flex: 2 },
+        {
+            xtype: 'widgetcolumn',
+            text: 'Образование',
+            widget: {
+                xtype: 'combo',
+                editable: false,
+                store: [
+                    'Local',
+                    'Remote'
+                ]
+            },
+            dataIndex: 'education',
+            flex: 1
+        },
         { text: 'Город', dataIndex: 'city', flex: 1 }
     ],
 
     listeners: {
-        select: 'onItemSelected'
+        //   select: 'onItemSelected'
     }
 });
