@@ -8,6 +8,7 @@ Ext.define('appUsers.view.main.List', {
     requires: [
         'appUsers.store.Personnel'
     ],
+    viewModel: 'main',
 
     title: 'Пользователи',
 
@@ -16,10 +17,10 @@ Ext.define('appUsers.view.main.List', {
     },
 
     columns: [
-        { text: 'Пользователь', dataIndex: 'name', flex: 2 },
+        { bind: { text: '{gridNameUser}' }, dataIndex: 'name', flex: 2 },
         {
             xtype: 'widgetcolumn',
-            text: 'Образование',
+            bind: { text: '{gridEducation}' },
             widget: {
                 xtype: 'combo',
                 editable: false,
@@ -31,7 +32,7 @@ Ext.define('appUsers.view.main.List', {
             dataIndex: 'education',
             flex: 1
         },
-        { text: 'Город', dataIndex: 'city', flex: 1 }
+        { bind: { text: '{gridCity}' }, dataIndex: 'city', flex: 1 }
     ],
 
     listeners: {
