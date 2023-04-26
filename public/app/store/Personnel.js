@@ -7,18 +7,16 @@ Ext.define('appUsers.store.Personnel', {
         'name', 'education', 'city'
     ],
 
-    data: { items: [
-        { name: 'Jean Luc', education: "Высшее", city: "Москва" },
-        { name: 'Worf',     education: "Высшее",  city: "Казань" },
-        { name: 'Deanna',   education: "Среднее",    city: "Киров" },
-        { name: 'Data',     education: "Профессиональное",    city: "С-Петербург" }
-    ]},
-
     proxy: {
-        type: 'memory',
+        type: 'ajax',
+        timeout: 10000,
+        actionMethods: {
+           read: 'GET'
+           },
+       url: '/user',
         reader: {
-            type: 'json',
-            rootProperty: 'items'
+            type: 'json'
         }
-    }
+    },
+    autoLoad: true 
 });
