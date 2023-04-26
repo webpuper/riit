@@ -21,4 +21,4 @@ Route::get('/', function () {
     return view('appusers');
 });
 
-//Route::get('/users', [UsersController::class, 'index']);
+//Route::get('/users', [UsersController::class, 'index']); 
