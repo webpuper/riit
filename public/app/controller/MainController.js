@@ -17,5 +17,10 @@ Ext.define('appUsers.controller.MainController', {
         if (choice === 'yes') {
             //
         }
+    },
+
+    LoadStoreEduction: function () {
+        // Загрузка Store список образование
+        Ext.getStore('education').load();
     }
 });

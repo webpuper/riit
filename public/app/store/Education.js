@@ -1,6 +1,6 @@
 Ext.define('appUsers.store.Education', {
     extend: 'Ext.data.Store',
-
+    storeId: 'education',
     alias: 'store.education',
 
     fields: [
@@ -20,5 +20,5 @@ Ext.define('appUsers.store.Education', {
         }
 
     },
-    autoLoad: true 
+    autoLoad: false 
 });

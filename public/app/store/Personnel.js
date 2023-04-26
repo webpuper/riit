@@ -1,7 +1,7 @@
 Ext.define('appUsers.store.Personnel', {
     extend: 'Ext.data.Store',
-
     alias: 'store.personnel',
+
 
     fields: [
         'id', 'name', 'education', 'city'
@@ -20,5 +20,10 @@ Ext.define('appUsers.store.Personnel', {
         }
 
     },
-    autoLoad: true 
+    autoLoad: true,
+    listeners:
+    {
+        // После полной загрузки пользователей, загрузим список "образование"
+        load: function() {this.LoadStoreEduction}
+    }
 });

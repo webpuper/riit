@@ -1,12 +1,14 @@
 /**
  * This view is an example list of people.
  */
+
 Ext.define('appUsers.view.main.List', {
     extend: 'Ext.grid.Panel',
     xtype: 'mainlist',
 
     requires: [
-        'appUsers.store.Personnel'
+        'appUsers.store.Personnel',
+        'appUsers.view.main.ComboEd'
     ],
 
     columnLines: true,
@@ -29,11 +31,7 @@ Ext.define('appUsers.view.main.List', {
             xtype: 'widgetcolumn',
             bind: { text: '{gridEducation}' },
             widget: {
-                xtype: 'combo',
-                editable: false,
-                store: {
-                    type: 'personnel'
-                }
+                xtype: 'comboeducation'
             },
             dataIndex: 'education',
             flex: 1
