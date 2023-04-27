@@ -9,7 +9,7 @@ Ext.define('appUsers.controller.MainController', {
 
     alias: 'controller.main',
 
-    init: function() {
+    init: function () {
     },
 
     onItemSelected: function (sender, record) {
@@ -22,14 +22,12 @@ Ext.define('appUsers.controller.MainController', {
         }
     },
 
-    setMaskBody: function(show)
-    {
-        if(show) Ext.getBody().mask('Сохранение...');
+    setMaskBody: function (show) {
+        if (show) Ext.getBody().mask('Сохранение...');
         else Ext.getBody().unmask();
     },
 
-    UpdateGridStore: function()
-    {
+    UpdateGridStore: function () {
         let contr = this;
         contr.setMaskBody(true);
         Ext.getStore('personnel').sync({
