@@ -17,16 +17,11 @@ Ext.define('appUsers.store.Personnel', {
 
         type: 'ajax',
         timeout: 10000,
-        /* actionMethods: {
-            read: 'GET'
-            },
-        url: '/api/users',*/
         reader: {
             type: 'json',
             rootProperty: 'data'
         }
-
     },
     autoSync: true,
-    autoLoad: true
+    autoLoad: false
 });

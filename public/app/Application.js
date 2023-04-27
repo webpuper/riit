@@ -15,12 +15,9 @@ Ext.define('appUsers.Application', {
         }
     },
 
-    stores: [
-        // TODO: add global / shared stores here
-    ],
-
     launch: function () {
         // TODO - Launch the application
+        Ext.getStore('personnel').load();
     },
 
     onAppUpdate: function () {
