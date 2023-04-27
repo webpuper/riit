@@ -13,6 +13,4 @@ Ext.define('appUsers.model.MainModel', {
         gridEducation: 'Образование',
         gridCity: 'Город'
     }
-
-    //TODO - add data, formulas and/or methods to support your view
 });
