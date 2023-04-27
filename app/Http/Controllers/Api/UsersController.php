@@ -62,7 +62,7 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $education = Education::where('name', $request->all()['education'])->get();
-        if (count($education) > 0) {
+        if (count($education) > 0) { 
             $result = User::where('id', $request->id)->update(['education_id' => $education[0]['id']]);
             if ($result) return 'true';
         }
