@@ -7,15 +7,13 @@ Ext.define('appUsers.store.Personnel', {
     ],
 
     proxy: {
-
+        type: 'rest',
         api: {
             read: '/api/users',
             //create  : '/api/create',
             update: '/api/update',
             // destroy : 'deleteLab.php'
         },
-
-        type: 'ajax',
         timeout: 10000,
         reader: {
             type: 'json',
