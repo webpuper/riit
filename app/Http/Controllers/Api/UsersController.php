@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-//use App\Models\Education;
+use App\Models\Education;
 use Illuminate\Http\Request;
 use App\Http\Resources\UsersResource;
 use Illuminate\Support\Facades\DB;
@@ -61,7 +61,13 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $education = Education::where('name', $request->all()['education'])->get();
+        if (count($education) > 0) {
+            $result = User::where('id', $request->id)->update(['education_id' => $education[0]['id']]);
+            if ($result) return 'true';
+        }
+
+        return 'false';
     }
 
     /**
