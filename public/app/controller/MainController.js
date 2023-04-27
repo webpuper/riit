@@ -9,15 +9,18 @@ Ext.define('appUsers.controller.MainController', {
 
     alias: 'controller.main',
 
-  /*  init: function() {
+    init: function() {
         this.listen({
             store: {
-                '#education': {
-                    load: this.LoadStoreUsers
+                '#personnel': {
+                    load: function(th, records, successful)
+                    {
+                        console.log(records);
+                    }
                 }
             }
         });
-    },*/
+    },
 
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
