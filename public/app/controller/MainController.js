@@ -29,8 +29,41 @@ Ext.define('appUsers.controller.MainController', {
         }
     },
 
-    LoadStoreUsers: function () {
-        // Загрузка Store списка пользователей
-      //  Ext.getStore('personnel').load();
-    }
+    UpdateGrid: function()
+    {
+     /*  setTimeout(
+            ()=>{
+                let storeGrid = Ext.getStore('personnel');
+        storeGrid.sync({
+             // scope:this,
+              success : function(response){
+                  Ext.Msg.show({ 
+                      title: 'Information', 
+                      msg: 'All OK',
+                      icon: Ext.MessageBox.INFO,
+                      buttons: Ext.Msg.OK
+                  });
+              },
+              failure:function(response){
+                  Ext.Msg.show({ 
+                      title: 'warning',
+                      msg: 'Error',
+                      icon: Ext.MessageBox.WARNING,
+                      buttons: Ext.Msg.OK
+                  });
+              }
+          });
+            },
+            400
+        );*/
+        
+      
+    },
+
+    SelectComboEd: function (combo) {
+        // Снятие фокуса с combo чтобы сразу же сработал sync для store
+        combo.up().up().focus();
+    },
+
+
 });

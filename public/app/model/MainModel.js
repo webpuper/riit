@@ -8,6 +8,7 @@ Ext.define('appUsers.model.MainModel', {
 
     data: {
         name: 'appUsers',
+        gridTitle: 'Пользователи РИИТ',
         gridNameUser: 'Пользователь',
         gridEducation: 'Образование',
         gridCity: 'Город'
