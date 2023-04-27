@@ -9,6 +9,16 @@ Ext.define('appUsers.controller.MainController', {
 
     alias: 'controller.main',
 
+  /*  init: function() {
+        this.listen({
+            store: {
+                '#education': {
+                    load: this.LoadStoreUsers
+                }
+            }
+        });
+    },*/
+
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
     },
@@ -19,8 +29,8 @@ Ext.define('appUsers.controller.MainController', {
         }
     },
 
-    LoadStoreEduction: function () {
-        // Загрузка Store список образование
-        Ext.getStore('education').load();
+    LoadStoreUsers: function () {
+        // Загрузка Store списка пользователей
+      //  Ext.getStore('personnel').load();
     }
 });

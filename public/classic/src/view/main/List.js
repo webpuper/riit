@@ -8,6 +8,7 @@ Ext.define('appUsers.view.main.List', {
 
     requires: [
         'appUsers.store.Personnel',
+        'appUsers.store.Education',
         'appUsers.view.main.ComboEd'
     ],
 
@@ -24,13 +25,14 @@ Ext.define('appUsers.view.main.List', {
     store: {
         type: 'personnel'
     },    
+    plugins: {ptype: 'cellediting', clicksToEdit: 1},
 
     columns: [
         { bind: { text: '{gridNameUser}' }, dataIndex: 'name', flex: 2 },
         {
-            xtype: 'widgetcolumn',
+           // xtype: 'widgetcolumn',
             bind: { text: '{gridEducation}' },
-            widget: {
+            editor: {
                 xtype: 'comboeducation'
             },
             dataIndex: 'education',

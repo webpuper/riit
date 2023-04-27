@@ -4,7 +4,7 @@ Ext.define('appUsers.store.Education', {
     alias: 'store.education',
 
     fields: [
-        'id', 'education'
+        'id', 'name'
     ],
 
     proxy: {
@@ -20,5 +20,5 @@ Ext.define('appUsers.store.Education', {
         }
 
     },
-    autoLoad: false 
+    autoLoad: true
 });

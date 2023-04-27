@@ -1,8 +1,14 @@
 Ext.define('appUsers.view.main.ComboEd', {
-    extend: 'Ext.form.field.ComboBox',
+    extend: 'Ext.form.ComboBox',
     xtype: 'comboeducation',
-                editable: false,
-                store: {
-                    type: 'education'
-                }
+    displayField: 'name',
+    valueField: 'id',
+    //editable: false,
+    store: {
+        type: 'education'
+    },
+    typeAhead: true,
+    triggerAction: 'all',
+    selectOnFocus: false,
+    queryMode: 'local'
 });
