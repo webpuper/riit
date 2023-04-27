@@ -20,7 +20,9 @@ Ext.define('appUsers.view.main.List', {
 
     viewModel: 'main',
 
-    title: 'Пользователи',
+    bind: { 
+        title: '{gridTitle}'
+    },
 
     store: {
         type: 'personnel'
@@ -30,7 +32,6 @@ Ext.define('appUsers.view.main.List', {
     columns: [
         { bind: { text: '{gridNameUser}' }, dataIndex: 'name', flex: 2 },
         {
-           // xtype: 'widgetcolumn',
             bind: { text: '{gridEducation}' },
             editor: {
                 xtype: 'comboeducation'
