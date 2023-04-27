@@ -10,16 +10,6 @@ Ext.define('appUsers.controller.MainController', {
     alias: 'controller.main',
 
     init: function() {
-        this.listen({
-            store: {
-                '#personnel': {
-                    load: function(th, records, successful)
-                    {
-                        console.log(records);
-                    }
-                }
-            }
-        });
     },
 
     onItemSelected: function (sender, record) {
@@ -32,40 +22,33 @@ Ext.define('appUsers.controller.MainController', {
         }
     },
 
-    UpdateGrid: function()
+    setMaskBody: function(show)
     {
-     /*  setTimeout(
-            ()=>{
-                let storeGrid = Ext.getStore('personnel');
-        storeGrid.sync({
-             // scope:this,
-              success : function(response){
-                  Ext.Msg.show({ 
-                      title: 'Information', 
-                      msg: 'All OK',
-                      icon: Ext.MessageBox.INFO,
-                      buttons: Ext.Msg.OK
-                  });
-              },
-              failure:function(response){
-                  Ext.Msg.show({ 
-                      title: 'warning',
-                      msg: 'Error',
-                      icon: Ext.MessageBox.WARNING,
-                      buttons: Ext.Msg.OK
-                  });
-              }
-          });
+        if(show) Ext.getBody().mask('Сохранение...');
+        else Ext.getBody().unmask();
+    },
+
+    UpdateGridStore: function()
+    {
+        let contr = this;
+        contr.setMaskBody(true);
+        Ext.getStore('personnel').sync({
+            callback: function (records, operation, success) {
+                contr.setMaskBody(false);
             },
-            400
-        );*/
-        
-      
+            success: function (batch, options) {
+                Ext.toast('Запись успешно обновлена', 'Обновление', 't');
+            },
+            failure: function (batch, options) {
+                Ext.toast('Ошибка', 'Обновление', 't');
+            }
+        });
     },
 
     SelectComboEd: function (combo) {
         // Снятие фокуса с combo чтобы сразу же сработал sync для store
         combo.up().up().focus();
+        this.UpdateGridStore();
     },
 
 

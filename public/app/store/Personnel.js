@@ -20,6 +20,5 @@ Ext.define('appUsers.store.Personnel', {
             rootProperty: 'data'
         }
     },
-    autoSync: true,
     autoLoad: false
 });
