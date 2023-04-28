@@ -19,15 +19,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users')
-            ->leftJoin('education', 'users.education_id', '=', 'education.id')
-            ->leftJoin('cities', 'users.city_id', '=', 'cities.id')
-            ->select(['users.id', 'users.name', 'cities.name AS city', 'education.name AS education'])
-            ->get();
 
-        return $users->collect();
-      //  return User::join('products', 'prices.product_id', '=', 'products.id')
-      //  return  UsersResource::collection(User::all());
     }
 
     /**
@@ -45,11 +37,25 @@ class UsersController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
-        //
+        $users = DB::table('users')
+        ->leftJoin('education', 'users.education_id', '=', 'education.id')
+        ->leftJoin('cities', 'users.city_id', '=', 'cities.id');
+
+        if(isset($request->all()['filter']))
+        {
+            // Применение фильтра для выборки
+            $param_education = $request->all()['education'];
+            $users = $users->where('education.name', $param_education);
+        }
+
+        $users = $users->select(['users.id', 'users.name', 'cities.name AS city', 'education.name AS education'])->get();
+
+        return $users->collect();
     }
 
     /**
@@ -62,7 +68,7 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $education = Education::where('name', $request->all()['education'])->get();
-        if (count($education) > 0) {
+        if (count($education) > 0) { 
             $result = User::where('id', $request->id)->update(['education_id' => $education[0]['id']]);
             if ($result) return 'true';
         }

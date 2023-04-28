@@ -1,3 +1,7 @@
+/*
+Store пользователей
+*/
+
 Ext.define('appUsers.store.Personnel', {
     extend: 'Ext.data.Store',
     alias: 'store.personnel',
@@ -9,7 +13,7 @@ Ext.define('appUsers.store.Personnel', {
     proxy: {
         type: 'rest',
         api: {
-            read: '/api/users',
+            read: '/api/users/show',
             //create  : '/api/create',
             update: '/api/update',
             // destroy : 'deleteLab.php'
@@ -17,7 +21,7 @@ Ext.define('appUsers.store.Personnel', {
         timeout: 10000,
         reader: {
             type: 'json',
-            rootProperty: 'data'
+           // rootProperty: 'data'
         }
     },
     autoLoad: false

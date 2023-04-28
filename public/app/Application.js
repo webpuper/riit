@@ -1,7 +1,5 @@
 /**
- * The main application class. An instance of this class is created by app.js when it
- * calls Ext.application(). This is the ideal place to handle application launch and
- * initialization details.
+ Основной класс Application
  */
 Ext.define('appUsers.Application', {
     extend: 'Ext.app.Application',
@@ -16,12 +14,13 @@ Ext.define('appUsers.Application', {
     },
 
     launch: function () {
-        // TODO - Launch the application
+        // Приложение загрузилось
+        // Загрузка store пользователей
         Ext.getStore('personnel').load();
     },
 
     onAppUpdate: function () {
-        Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
+        Ext.Msg.confirm('Обновление', 'Приложение обновилось. Загрузить новую версию?',
             function (choice) {
                 if (choice === 'yes') {
                     window.location.reload();

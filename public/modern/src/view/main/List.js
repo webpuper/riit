@@ -9,7 +9,7 @@ Ext.define('appUsers.view.main.List', {
         'appUsers.store.Personnel'
     ],
 
-    title: 'Пользователи',
+    title: 'Перейдите на версию для десктопа',
 
     store: {
         type: 'personnel'

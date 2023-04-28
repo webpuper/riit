@@ -1,3 +1,7 @@
+/*
+Store образование
+*/
+
 Ext.define('appUsers.store.Education', {
     extend: 'Ext.data.Store',
     storeId: 'education',
