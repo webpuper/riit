@@ -74,11 +74,16 @@ Ext.define('appUsers.view.main.Main', {
         }
     },
 
-    items: [{
-        title: 'Тест для РИИТ',
-        iconCls: 'x-fa fa-home',
-        items: [{
-            xtype: 'mainlist'
+    items: [
+        {
+            title: 'Тест для РИИТ',
+            iconCls: 'x-fa fa-home',
+            items: [
+                {
+                    xtype: 'filtergrid'
+                },
+                {
+                    xtype: 'mainlist'
+                }]
         }]
-    }]
 });

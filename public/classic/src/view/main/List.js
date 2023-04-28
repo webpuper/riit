@@ -13,7 +13,7 @@ Ext.define('appUsers.view.main.List', {
     ],
 
     columnLines: true,
-    height: screen.height - 200,
+    height: screen.height - 300,
     width: '100%',
 
     frame: true,
