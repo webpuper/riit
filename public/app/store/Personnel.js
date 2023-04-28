@@ -1,3 +1,7 @@
+/*
+Store пользователей
+*/
+
 Ext.define('appUsers.store.Personnel', {
     extend: 'Ext.data.Store',
     alias: 'store.personnel',

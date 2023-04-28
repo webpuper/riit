@@ -1,9 +1,5 @@
 /**
- * This class is the main view for the application. It is specified in app.js as the
- * "mainView" property. That setting automatically applies the "viewport"
- * plugin causing this view to become the body element (i.e., the viewport).
- *
- * TODO - Replace this content of this view to suite the needs of your application.
+Панель основная
  */
 Ext.define('appUsers.view.main.Main', {
     extend: 'Ext.tab.Panel',
@@ -77,7 +73,9 @@ Ext.define('appUsers.view.main.Main', {
 
     items: [
         {
-            title: 'Тест для РИИТ',
+            bind: {
+                title: '{labelMenu1}'
+            },
             iconCls: 'x-fa fa-home',
             items: [
                 {

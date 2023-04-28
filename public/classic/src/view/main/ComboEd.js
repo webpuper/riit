@@ -1,3 +1,7 @@
+/*
+ComboBox для полей таблицы пользователей
+*/
+
 Ext.define('appUsers.view.main.ComboEd', {
     extend: 'Ext.form.ComboBox',
     xtype: 'comboeducation',
@@ -12,8 +16,7 @@ Ext.define('appUsers.view.main.ComboEd', {
     },
     listeners:
     {
-        select: function(combo, record)
-        {
+        select: function (combo, record) {
             this.getController().SelectComboEd(combo);
         }
     }
