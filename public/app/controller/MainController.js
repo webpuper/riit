@@ -47,7 +47,7 @@ Ext.define('appUsers.controller.MainController', {
     LoadGridStore: function (Params = null) {
         Ext.getStore('personnel').getModel().load(Params, {
             callback: function(records, operation, success) {
-                \
+                // обработка ответа
             }
         });
     },
