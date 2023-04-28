@@ -7,12 +7,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 <br />
-## Приложение appUser<br />
+## Приложение appUser
 
 Тестовое задание для РИИТ
-<br />
+
 ## Основные файлы
-<br /><br />
+
 # Laravel
 <br /><br />
 routes\api.php - маршруты для API // использовал три ручки<br />
