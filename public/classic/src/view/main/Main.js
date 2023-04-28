@@ -15,7 +15,8 @@ Ext.define('appUsers.view.main.Main', {
 
         'appUsers.controller.MainController',
         'appUsers.model.MainModel',
-        'appUsers.view.main.List'
+        'appUsers.view.main.List',
+        'appUsers.view.main.Filter'
     ],
 
     controller: 'main',

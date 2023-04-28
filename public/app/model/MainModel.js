@@ -15,6 +15,6 @@ Ext.define('appUsers.model.MainModel', {
 
         //---------
         filterTitle: 'Фильтр',
-        filterLabel1: 'образование'
+        filterLabel1: 'Образование'
     }
 });
