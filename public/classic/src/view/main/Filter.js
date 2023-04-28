@@ -16,6 +16,7 @@ Ext.define('appUsers.view.main.Filter', {
         {
             xtype: 'combobox',
             itemId: 'filter_education',
+            id: 'filter_education_id',
             controller: 'main',
             margin: 10,
             width: '80%',
