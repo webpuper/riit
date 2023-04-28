@@ -45,11 +45,13 @@ Ext.define('appUsers.controller.MainController', {
     },
 
     LoadGridStore: function (Params = null) {
-        Ext.getStore('personnel').getModel().load(Params, {
+        Ext.getStore('personnel').load({
+            params: Params,
             callback: function(records, operation, success) {
-                // обработка ответа
+               
             }
         });
+        
     },
 
     SelectComboEd: function (combo) {
@@ -63,8 +65,10 @@ Ext.define('appUsers.controller.MainController', {
 
     getFilterParams: function(filter_education)
     {
-        return 'education='+filter_education
-        + '';
+        return {
+            filter: true,
+            education: filter_education
+        }
         // здесь можно будет добавлять другие фильтры
     },
 
