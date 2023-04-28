@@ -12,13 +12,17 @@ Ext.define('appUsers.view.main.Filter', {
     dock: 'top',
     height: 100,
     width: '100%',
-    title: 'Фильтр',
+    bind: {
+        title: '{filterTitle}',
+    },
     items: [
         {
             xtype: 'combobox',
             margin: 10,
             width: '80%',
-            fieldLabel: 'Образование'
+            bind: {
+                fieldLabel: '{filterLabel1}'
+            }
         }
     ]
 

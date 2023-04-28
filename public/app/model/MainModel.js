@@ -11,6 +11,10 @@ Ext.define('appUsers.model.MainModel', {
         gridTitle: 'Пользователи РИИТ',
         gridNameUser: 'Пользователь',
         gridEducation: 'Образование',
-        gridCity: 'Город'
+        gridCity: 'Город',
+
+        //---------
+        filterTitle: 'Фильтр',
+        filterLabel1: 'образование'
     }
 });
