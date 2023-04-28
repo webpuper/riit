@@ -1,5 +1,5 @@
 /**
- * This view is an example list of people.
+ Таблица пользователей
  */
 
 Ext.define('appUsers.view.main.List', {
@@ -13,21 +13,21 @@ Ext.define('appUsers.view.main.List', {
     ],
 
     columnLines: true,
-    height: screen.height - 200,
+    height: screen.height - 300,
     width: '100%',
 
     frame: true,
 
     viewModel: 'main',
 
-    bind: { 
+    bind: {
         title: '{gridTitle}'
     },
 
     store: {
         type: 'personnel'
-    },    
-    plugins: {ptype: 'cellediting', clicksToEdit: 1},
+    },
+    plugins: { ptype: 'cellediting', clicksToEdit: 1 },
 
     columns: [
         { bind: { text: '{gridNameUser}' }, dataIndex: 'name', flex: 2 },
@@ -40,10 +40,5 @@ Ext.define('appUsers.view.main.List', {
             flex: 1
         },
         { bind: { text: '{gridCity}' }, dataIndex: 'city', flex: 1 }
-    ],
-
-    listeners: {
-        //   select: 'onItemSelected'
-
-    }
+    ]
 });

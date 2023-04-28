@@ -1,5 +1,5 @@
 /**
- * This class is the view model for the Main view of the application.
+ Модель общая
  */
 Ext.define('appUsers.model.MainModel', {
     extend: 'Ext.app.ViewModel',
@@ -8,9 +8,16 @@ Ext.define('appUsers.model.MainModel', {
 
     data: {
         name: 'appUsers',
+        labelMenu1: 'Тест для РИИТ',
+
+        //----------
         gridTitle: 'Пользователи РИИТ',
         gridNameUser: 'Пользователь',
         gridEducation: 'Образование',
-        gridCity: 'Город'
+        gridCity: 'Город',
+
+        //---------
+        filterTitle: 'Фильтр',
+        filterLabel1: 'Образование'
     }
 });

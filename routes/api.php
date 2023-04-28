@@ -23,7 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResources([ 
     'users' => UsersController::class,
     'education' => EducationController::class,
-    'update' => UsersController::class,
-   /*'faq': FaqController::class
-      'faq': FaqController::class*/
+    'update' => UsersController::class
 ]);
