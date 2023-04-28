@@ -35,5 +35,11 @@ Ext.define('appUsers.view.main.Main', {
         items: [{
             xtype: 'mainlist'
         }]
-    }]
+    }],
+    listeners: 
+    {
+        show: ()=>{
+            alert('Данная версия приложения предназначена для десктопных устройств.');
+        }
+    }
 });
